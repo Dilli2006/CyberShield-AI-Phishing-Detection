@@ -1,92 +1,82 @@
-# 🛡 CyberShield – AI-Based Phishing & Scam Detection System
+# CyberShield – Phishing and Spam Detection System
 
-![Python](https://img.shields.io/badge/Python-3.10-blue)
-![Machine Learning](https://img.shields.io/badge/Machine-Learning-green)
-![Streamlit](https://img.shields.io/badge/Frontend-Streamlit-red)
-![Status](https://img.shields.io/badge/Status-Completed-success)
+## Overview
 
----
+CyberShield is a multi-modal machine learning system designed to detect:
 
-## 🚀 Project Overview
+- SMS / Email spam messages
+- Phishing and malicious URLs
 
-CyberShield is a multi-modal AI system designed to detect:
-
-- 📩 SMS / Email Spam Messages  
-- 🌐 Phishing & Malicious URLs  
-
-The system uses Natural Language Processing (NLP) and Hybrid Feature Engineering to identify cyber threats in real time.
+The system applies Natural Language Processing (NLP) and hybrid feature engineering techniques to classify potential cyber threats in real time.
 
 ---
 
-## 🎯 Problem Statement
+## Problem Statement
 
-Phishing attacks and scam messages are increasing rapidly.  
-Traditional rule-based systems fail to generalize to unseen attacks.
-
-CyberShield leverages machine learning models trained on real datasets to classify suspicious patterns using:
-
-- Character-level pattern analysis
-- Structural URL features
-- Text-based NLP modeling
+Phishing attacks and scam messages are increasingly common and difficult to detect using rule-based systems.  
+This project explores machine learning approaches to detect suspicious textual and structural patterns in URLs and messages.
 
 ---
 
-## 🧠 Architecture
+## System Architecture
 
-### 📩 SMS Detection Pipeline
-- TF-IDF (word-level)
-- Naive Bayes Classifier
+### 1. SMS Spam Detection
+- TF-IDF (word-level vectorization)
+- Multinomial Naive Bayes classifier
 - Accuracy: ~97%
 
-### 🌐 URL Phishing Detection Pipeline
-- Character-level TF-IDF (2–6 grams)
-- Structural URL Features:
+### 2. URL Phishing Detection
+- Character-level TF-IDF (2–6 n-grams)
+- Structural URL features:
   - URL length
   - Number of dots
   - Digit count
+  - Hyphen count
   - HTTPS presence
 - Logistic Regression (class-balanced)
 - Accuracy: ~99.6%
 
 ---
 
-## 📊 Model Performance
+## Model Evaluation
 
-| Model | Accuracy | Precision | Recall | F1 Score |
-|--------|----------|-----------|--------|----------|
-| SMS Detection | 97% | 96% | 95% | 96% |
-| URL Detection | 99.6% | 99% | 100% | 99% |
+Both models were evaluated using:
 
-✔ Confusion Matrix Visualization  
-✔ Performance Dashboard  
-✔ Confidence Scoring  
+- Accuracy
+- Precision
+- Recall
+- F1 Score
+- Confusion Matrix
+
+The URL detection model demonstrates strong generalization on structured phishing datasets, while the SMS classifier performs reliably on spam detection tasks.
 
 ---
 
-## 🖥 Features
+## Features
 
-- Real-time detection interface (Streamlit)
-- Hybrid ML architecture
+- Real-time classification using Streamlit
 - Confidence score output
+- Multi-page interface
 - Performance dashboard
-- Clean modular code structure
+- Confusion matrix visualization
+- Modular training and inference pipelines
 
 ---
 
-## ⚙️ Tech Stack
+## Tech Stack
 
 - Python
 - Scikit-learn
-- Pandas & NumPy
-- TF-IDF Vectorization
-- Logistic Regression
-- Naive Bayes
+- Pandas
+- NumPy
 - Streamlit
-- Matplotlib & Seaborn
+- Matplotlib
+- Seaborn
+- NLTK
 
 ---
 
-## 🚀 How To Run
+## How to Run
 
 ```bash
 pip install -r requirements.txt
